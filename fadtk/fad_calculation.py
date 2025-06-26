@@ -4,7 +4,7 @@ from .fad import FrechetAudioDistance, log
 from .model_loader import *
 from .fad_batch import cache_embedding_files
 
-def calculate_fad(model_type, baseline, eval, workers=8, force_emb_calc=False, audio_len=4):
+def calculate_fad(model_type, baseline, eval, workers=8, force_emb_calc=False, audio_len=None):
 
     models = {m.name: m for m in get_all_models(audio_len=audio_len)}
     model = models[model_type]
